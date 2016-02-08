@@ -35,7 +35,7 @@ public class BirthdayDayCalculaterTest
     {
     	BirthdayDayCalculater calc = new BirthdayDayCalculater();
     	String aDate = "01/01/2016";
-    	int days = calc.calcTime(aDate);
+    	int days = calc.calcTimeSince(aDate);
     	assertEquals(38, days);
     }
 }
