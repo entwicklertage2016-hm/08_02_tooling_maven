@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class BirthdayDayCalculaterTest 
     extends TestCase
 {
     /**
@@ -15,7 +15,7 @@ public class AppTest
      *
      * @param testName name of the test case
      */
-    public AppTest( String testName )
+    public BirthdayDayCalculaterTest( String testName )
     {
         super( testName );
     }
@@ -25,7 +25,7 @@ public class AppTest
      */
     public static Test suite()
     {
-        return new TestSuite( AppTest.class );
+        return new TestSuite( BirthdayDayCalculaterTest.class );
     }
 
     /**
@@ -33,6 +33,9 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+    	BirthdayDayCalculater calc = new BirthdayDayCalculater();
+    	String aDate = "01/01/2016";
+    	int days = calc.calcTime(aDate);
+    	assertEquals(38, days);
     }
 }

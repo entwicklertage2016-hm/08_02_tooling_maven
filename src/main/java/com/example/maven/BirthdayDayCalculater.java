@@ -9,20 +9,20 @@ import org.joda.time.format.DateTimeFormatter;
  * Hello world!
  *
  */
-public class App 
+public class BirthdayDayCalculater 
 {
     public static void main( String[] args )
     {
-        System.out.println( calcTime("17/04/1992"));
+    	BirthdayDayCalculater calc = new BirthdayDayCalculater();
+        System.out.println( calc.calcTime(args[0]));
     }
     
-    public static String calcTime(String date){
+    public int calcTime(String aDate){
     	DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy");
-    	DateTime dt = formatter.parseDateTime(date);
+    	DateTime dt = formatter.parseDateTime(aDate);
     	DateTime today = new DateTime();
-    	today.minusYears(dt.getYear());
     	Days days = Days.daysBetween(dt.toLocalDate(), today.toLocalDate());
-    	return days.getDays()+"";
+    	return days.getDays();
     }
     
 }
